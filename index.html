@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shaolin Do Practice Timer</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,900,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='main.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+
+<div id="countdown" class="countdown countdown--wide">
+        <div id="ticker" class="countdown__fill"></div>
+
+    <div class="layout-container">
+
+        <!-- Activity Selection -->
+        <div class="activity-selection">
+            <div>
+                <h2>Which activities to you want to include?</h2>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="activity btn btn-default" data-activity="0">
+                        <input type="checkbox" autocomplete="off">Short Katas
+                    </label>
+                    <label class="activity btn btn-default" data-activity="1">
+                        <input type="checkbox" autocomplete="off">Sparring Techniques
+                    </label>
+                    <label class="activity btn btn-default" data-activity="2">
+                        <input type="checkbox" autocomplete="off">Long Forms
+                    </label>
+                    <label class="activity btn btn-default" data-activity="3">
+                        <input type="checkbox" autocomplete="off">Weapon Forms
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <h2>Options</h2>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="activity-combos btn btn-default">
+                        <input type="checkbox" autocomplete="off">Generate Combos
+                    </label>
+                </div>
+
+                <div class="btn-group speed" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" data-speed="slow">Slow</button>
+                    <button type="button" class="btn btn-default active" data-speed="med">Medium</button>
+                    <button type="button" class="btn btn-default" data-speed="fast">Fast</button>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-default" id="go">Go!</button>
+        </div>
+
+
+        <!-- Activity In-Progress -->
+        <div class="activity-type">
+            <div class="activity-type-title">
+                <span class="activity-type-number"></span>
+            </div>
+            <div class="activity-type-description"></div>
+            <div class="activity-timer-counter"></div>
+
+        </div>
+    </div>
+
+
+        <!--<div id="seconds" class="countdown__digit">00</div>-->
+    </div>
+
+
+    <!--<a id="toggle" class="full-button">Toggle size</a>-->
+
+
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

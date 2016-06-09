@@ -1,0 +1,264 @@
+html, body {
+    font-family: 'Raleway';
+    color: #f2f2f2;
+}
+
+* {
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+h2 {
+    margin-top: 4rem;
+}
+
+.layout-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    background-color: transparent;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.activity-type {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: auto;
+    text-align: center;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    z-index: 10;
+}
+
+.activity-type.change {
+    padding-bottom: 40px;
+    opacity: 0;
+}
+
+.activity-type .activity-type-title {
+    font-size: 6rem;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.activity-type .activity-type-description, .activity-type .activity-type-number {
+    font-family: 'Oswald';
+    font-size: 12rem;
+    font-weight: 400;
+}
+.activity-type .activity-type-number {
+    display: inline-block;
+}
+
+.activity-duration {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: 0 auto;
+    text-align: center;
+}
+button.btn, button#go {
+    background: transparent;
+    color: #f2f2f2;
+    font-size: 3rem;
+    font-weight: 100;
+    padding: 18px;
+    outline: none;
+    min-width: 14rem;
+    outline: none;
+}
+
+button#go {
+    margin-top: 4rem;
+    background-color: #4fd600;
+}
+
+label.activity-combos {
+    margin-right: 20px;
+    outline: none;
+}
+
+.activity-duration button.btn:focus, .activity-duration button.btn.active {
+    background: #f2f2f2;
+    color: #000000;
+}
+
+.activity-selection {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: 0 auto;
+    text-align: center;
+    flex-direction: row;
+    align-content: center;
+    -webkit-align-content: center;
+}
+.activity-selection label.btn {
+    background: transparent;
+    color: #f2f2f2;
+    font-size: 3rem;
+    font-weight: 100;
+    padding: 18px;
+    outline: none;
+}
+.activity-selection label.btn.active, .activity-selection label.btn:active {
+    background: #f2f2f2;
+    color: #000000;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+/* COUNTDOWN */
+.container {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.countdown {
+    background-color: #222222;
+    display: block;
+    width: 66vmin;
+    height: 66vmin;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    /*font-size: 25vmin;*/
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: width, height, border-radius, font-size;
+    transition: width, height, border-radius, font-size;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+.countdown--ended {
+    -webkit-animation: buzz 0.5s;
+    animation: buzz 0.5s;
+}
+@-webkit-keyframes buzz {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: rotate(6deg);
+        transform: rotate(6deg);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: rotate(-6deg);
+        transform: rotate(-6deg);
+    }
+    100% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+@keyframes buzz {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: rotate(6deg);
+        transform: rotate(6deg);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: rotate(-6deg);
+        transform: rotate(-6deg);
+    }
+    100% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+.countdown--wide {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+.countdown__fill {
+    display: block;
+    width: 100%;
+    height: 4%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #4fd600;
+    opacity: 1;
+}
+.countdown__digit {
+    width: 100%;
+    color: #FF5722;
+    text-align: center;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}
+.countdown__buttons {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    height: 200px;
+    margin-top: -100px;
+    color: white;
+    /*z-index: 1;*/
+}
+.countdown__button {
+    height: 50%;
+}
+
+.full-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 1em 0.5em 0.5em 2em;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
