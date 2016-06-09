@@ -106,6 +106,7 @@ $(document).ready(function(){
 
     // Flags
     var includeCombos = false;
+    var voice = false;
 
     var init = function() {
 
@@ -115,6 +116,9 @@ $(document).ready(function(){
         // Event handlers
         $('.activity-combos').click(function(){
             includeCombos = !includeCombos;
+        });
+        $('.activity-voice').click(function(){
+            voice = !voice;
         });
         $('.speed > button.btn').click(setSpeed);
         $('.activity').click(toggleActivity);
@@ -172,6 +176,8 @@ $(document).ready(function(){
                     description += shortKatas[Math.floor(Math.random()*30)];
                     activityLength = 5000 * speedModifier;
                 }
+                if(voice) {responsiveVoice.speak("short katta " + description);};
+
                 break;
             case 1:
                 name = activityTypes[availableActivities[activity]];
@@ -187,6 +193,7 @@ $(document).ready(function(){
                     description += sparringTechniques[Math.floor(Math.random()*20)];
                     activityLength = 3000 * speedModifier;
                 }
+                if(voice){responsiveVoice.speak("sparring technique " + description)};
                 break;
             case 2:
                 var entry = [Math.floor(Math.random()*longForms.length)];
